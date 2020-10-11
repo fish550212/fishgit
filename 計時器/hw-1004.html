@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>倒數計時器</title>
+</head>
+
+<body>
+    <div class="time">
+        <span id="time-min">10</span>:<span id="time-sec">00</span>
+    </div>
+    
+</body>
+<script>
+    // 方法1: 宣告是抓值來改，要塞回去 (宣告時，只有拿值，所以值改變後，要塞回去該標籤的innerText)
+    // var timeSec= document.getElementById("time-sec").innerText;
+    // var repeatool_1= setInterval(function(){
+    //     document.getElementById("time-sec").innerText = timeSec;
+    //     console.log(timeSec);
+    //     timeSec++;
+    // }, 1000);
+
+    // 方法2: 宣告是抓標籤元素，所以該標籤的innerText改變時，就會直接改變了
+    var timeSecTag= document.getElementById("time-sec");
+    var timeMinTag= document.getElementById("time-min");
+    var repeatsecTool= setInterval(function(){
+        console.log(timeSecTag.innerText);
+        // 開始改變秒數
+        if (timeSecTag.innerText == "00") {
+            timeSecTag.innerText = "59";
+            timeMinTag.innerText--;
+        } else {
+            timeSecTag.innerText = timeSecTag.innerText - 1;
+        }
+        
+        // if (timeSecTag.innerText < 10) {
+        //     timeSecTag.innerText = '0'+ timeSecTag.innerText; 
+        // }
+        if (timeSecTag.innerText.length < 2) {
+            timeSecTag.innerText = '0'+ timeSecTag.innerText;
+        }
+        if (timeMinTag.innerText.length < 2) {
+            timeMinTag.innerText = '0'+ timeMinTag.innerText;
+        }
+    }, 1000);
+    
+   
+
+    
+
+</script>
+</html>
