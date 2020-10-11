@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>計時器</title>
+</head>
+
+<body>
+    
+</body>
+<script>
+      window.document.write("<div>魚歡迎光臨</div>", "安安");
+    
+    //setTimeout(做什麼事, 時間); 做一次
+    // setTimeout(function(){
+    //     console.log("丸子早安～");
+    //     alert("早安早安");
+    // }, 5000);
+
+    //setInterval(做什麼事, 時間); 一直做
+    var num = 1;
+    var repeatTool = setInterval(function(){
+      console.log(num); 
+      num++; 
+    }, 1000);
+
+    // setInterval停止的寫法：利用setTimeout寫一個方法，用clearInterval讓setInterval停止重複
+    setTimeout(function(){
+        clearInterval(repeatTool);
+        console.log("clear interval!");
+    }, 10000);
+    // 
+</script>
+</html>
